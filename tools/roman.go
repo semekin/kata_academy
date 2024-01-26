@@ -22,12 +22,13 @@ var roman = map[string]int{
 func rome(x, y, operatorIndex string) {
 	int1 := roman[x]
 	int2 := roman[y]
+	res := calc(int1, int2, operatorIndex)
 
-	if (int1 > 0 && int1 < 11) && (int2 > 0 && int2 < 11) {
-		res := calc(int1, int2, operatorIndex)
+	if (int1 > 0 && int1 < 11) && (int2 > 0 && int2 < 11) && res > 0 {
+
 		fmt.Println(x, operatorIndex, y, "=", getKeyRoman(roman, res))
 	} else {
-		panic("Введите корректные данные")
+		panic("Недопустимая операция")
 	}
 
 }
